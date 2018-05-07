@@ -10,7 +10,7 @@ class OnOnline extends EventEmitter {
 		setInterval(() => {
 			isOnline().then(online => {
 				if (state !== online) {
-					this.emit(online);
+					this.emit(online ? 'online' : 'offline');
 					state = online;
 				}
 			});
